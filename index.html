@@ -134,17 +134,46 @@
     .hidden {
       display: none;
     }
-    .price-vnd {
-      display: inline;
-    }
-    .price-usd {
+    .modal {
       display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
     }
-    .en .price-vnd {
-      display: none;
+    .modal-content {
+      background-color: #161b22;
+      margin: 10% auto;
+      padding: 20px;
+      border: 1px solid #30363d;
+      width: 80%;
+      max-width: 700px;
+      border-radius: 5px;
     }
-    .en .price-usd {
-      display: inline;
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #fff;
+    }
+    .driver-version {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #1f2937;
+      border-radius: 4px;
+    }
+    .os-support {
+      margin-top: 5px;
+      font-size: 0.9em;
+      color: #8b949e;
     }
   </style>
 </head>
@@ -212,52 +241,33 @@
           <td>1125K</td>
           <td>6C/12T</td>
           <td>2.6 → 4.8GHz</td>
-          <td>
-            <span class="vi">✓ Lên ~5.3GHz</span>
-            <span class="en hidden">✔ Up to ~5.3GHz</span>
-          </td>
-          <td>
-            <span class="vi">Vega XE I 125</span>
-            <span class="en hidden">Vega XE I 125</span>
-          </td>
-          <td>
-            <span class="price-vnd">3.890.000 VND</span>
-            <span class="price-usd">~$149.62</span>
-          </td>
+          <td class="vi">✓ Lên ~5.3GHz</td>
+          <td class="en hidden">Yes (~5.3GHz)</td>
+          <td>Vega XE I 125</td>
+          <td class="vi">3.890.000 VND</td>
+          <td class="en hidden">$169.99</td>
         </tr>
         <tr>
           <td>1125KF</td>
           <td>6C/12T</td>
           <td>2.6 → 4.8GHz</td>
-          <td>
-            <span class="vi">✓ Lên ~5.3GHz</span>
-            <span class="en hidden">✔ Up to ~5.3GHz</span>
-          </td>
-          <td>
-            <span class="vi">Bị khóa</span>
-            <span class="en hidden">Locked</span>
-          </td>
-          <td>
-            <span class="price-vnd">3.690.000 VND</span>
-            <span class="price-usd">~$141.92</span>
-          </td>
+          <td class="vi">✓ Lên ~5.3GHz</td>
+          <td class="en hidden">Yes (~5.3GHz)</td>
+          <td class="vi">Bị khóa</td>
+          <td class="en hidden">Locked</td>
+          <td class="vi">3.690.000 VND</td>
+          <td class="en hidden">$159.99</td>
         </tr>
         <tr>
           <td>1125F</td>
           <td>6C/12T</td>
           <td>2.6 → 4.8GHz</td>
-          <td>
-            <span class="vi">✗ Không mở OC</span>
-            <span class="en hidden">✗ OC locked</span>
-          </td>
-          <td>
-            <span class="vi">Bị khóa</span>
-            <span class="en hidden">Locked</span>
-          </td>
-          <td>
-            <span class="price-vnd">3.390.000 VND</span>
-            <span class="price-usd">~$130.38</span>
-          </td>
+          <td class="vi">✗ Không mở OC</td>
+          <td class="en hidden">OC Locked</td>
+          <td class="vi">Bị khóa</td>
+          <td class="en hidden">Locked</td>
+          <td class="vi">3.390.000 VND</td>
+          <td class="en hidden">$149.99</td>
         </tr>
       </tbody>
     </table>
@@ -287,52 +297,33 @@
           <td>1525K</td>
           <td>8C/16T</td>
           <td>2.8 → 5.2GHz</td>
-          <td>
-            <span class="vi">✔ Lên ~5.7GHz</span>
-            <span class="en hidden">✔ Up to ~5.7GHz</span>
-          </td>
-          <td>
-            <span class="vi">Vega XE I 525</span>
-            <span class="en hidden">Vega XE I 525</span>
-          </td>
-          <td>
-            <span class="price-vnd">6.990.000 VND</span>
-            <span class="price-usd">~$268.85</span>
-          </td>
+          <td class="vi">✔ Lên ~5.7GHz</td>
+          <td class="en hidden">Yes (~5.7GHz)</td>
+          <td>Vega XE I 525</td>
+          <td class="vi">6.990.000 VND</td>
+          <td class="en hidden">$299.99</td>
         </tr>
         <tr>
           <td>1525KF</td>
           <td>8C/16T</td>
           <td>2.8 → 5.2GHz</td>
-          <td>
-            <span class="vi">✔ Lên ~5.7GHz</span>
-            <span class="en hidden">✔ Up to ~5.7GHz</span>
-          </td>
-          <td>
-            <span class="vi">Bị khóa</span>
-            <span class="en hidden">Locked</span>
-          </td>
-          <td>
-            <span class="price-vnd">6.590.000 VND</span>
-            <span class="price-usd">~$253.46</span>
-          </td>
+          <td class="vi">✔ Lên ~5.7GHz</td>
+          <td class="en hidden">Yes (~5.7GHz)</td>
+          <td class="vi">Bị khóa</td>
+          <td class="en hidden">Locked</td>
+          <td class="vi">6.590.000 VND</td>
+          <td class="en hidden">$279.99</td>
         </tr>
         <tr>
           <td>1525F</td>
           <td>8C/16T</td>
           <td>2.8 → 5.2GHz</td>
-          <td>
-            <span class="vi">✕ Không mở OC</span>
-            <span class="en hidden">✗ OC locked</span>
-          </td>
-          <td>
-            <span class="vi">Bị khóa</span>
-            <span class="en hidden">Locked</span>
-          </td>
-          <td>
-            <span class="price-vnd">6.190.000 VND</span>
-            <span class="price-usd">~$238.08</span>
-          </td>
+          <td class="vi">✕ Không mở OC</td>
+          <td class="en hidden">OC Locked</td>
+          <td class="vi">Bị khóa</td>
+          <td class="en hidden">Locked</td>
+          <td class="vi">6.190.000 VND</td>
+          <td class="en hidden">$259.99</td>
         </tr>
       </tbody>
     </table>
@@ -362,52 +353,33 @@
           <td>1925K</td>
           <td>12C/24T</td>
           <td>3.0 → 5.6GHz</td>
-          <td>
-            <span class="vi">✔ Lên ~5.9GHz+</span>
-            <span class="en hidden">✔ Up to ~5.9GHz+</span>
-          </td>
-          <td>
-            <span class="vi">Vega XE 1925</span>
-            <span class="en hidden">Vega XE 1925</span>
-          </td>
-          <td>
-            <span class="price-vnd">10.990.000 VND</span>
-            <span class="price-usd">~$422.69</span>
-          </td>
+          <td class="vi">✔ Lên ~5.9GHz+</td>
+          <td class="en hidden">Yes (~5.9GHz+)</td>
+          <td>Vega XE 1925</td>
+          <td class="vi">10.990.000 VND</td>
+          <td class="en hidden">$499.99</td>
         </tr>
         <tr>
           <td>1925KF</td>
           <td>12C/24T</td>
           <td>3.0 → 5.6GHz</td>
-          <td>
-            <span class="vi">✔ Lên ~5.9GHz+</span>
-            <span class="en hidden">✔ Up to ~5.9GHz+</span>
-          </td>
-          <td>
-            <span class="vi">Bị khóa</span>
-            <span class="en hidden">Locked</span>
-          </td>
-          <td>
-            <span class="price-vnd">10.690.000 VND</span>
-            <span class="price-usd">~$411.15</span>
-          </td>
+          <td class="vi">✔ Lên ~5.9GHz+</td>
+          <td class="en hidden">Yes (~5.9GHz+)</td>
+          <td class="vi">Bị khóa</td>
+          <td class="en hidden">Locked</td>
+          <td class="vi">10.690.000 VND</td>
+          <td class="en hidden">$479.99</td>
         </tr>
         <tr>
           <td>1925F</td>
           <td>12C/24T</td>
           <td>3.0 → 5.6GHz</td>
-          <td>
-            <span class="vi">✕ Không mở OC</span>
-            <span class="en hidden">✗ OC locked</span>
-          </td>
-          <td>
-            <span class="vi">Bị khóa</span>
-            <span class="en hidden">Locked</span>
-          </td>
-          <td>
-            <span class="price-vnd">10.290.000 VND</span>
-            <span class="price-usd">~$395.77</span>
-          </td>
+          <td class="vi">✕ Không mở OC</td>
+          <td class="en hidden">OC Locked</td>
+          <td class="vi">Bị khóa</td>
+          <td class="en hidden">Locked</td>
+          <td class="vi">10.290.000 VND</td>
+          <td class="en hidden">$459.99</td>
         </tr>
       </tbody>
     </table>
@@ -419,12 +391,12 @@
     <p class="vi">Tải xuống firmware, BIOS và driver GPU/iGPU mới nhất từ trung tâm hỗ trợ:</p>
     <p class="en hidden">Download the latest firmware, BIOS and GPU/iGPU drivers from support center:</p>
     <ul class="vi">
-      <li><a href="#">Driver VegaXE I series</a></li>
+      <li><a href="#" onclick="showDriverModal()">Driver VegaXE I series</a></li>
       <li><a href="#">Microcode BlackDNA Gen I</a></li>
       <li><a href="#">BIOS cập nhật lỗi Corezen I-1525K</a></li>
     </ul>
     <ul class="en hidden">
-      <li><a href="#">VegaXE I series Driver</a></li>
+      <li><a href="#" onclick="showDriverModal()">VegaXE I series Driver</a></li>
       <li><a href="#">BlackDNA Gen I Microcode</a></li>
       <li><a href="#">BIOS update for Corezen I-1525K</a></li>
     </ul>
@@ -436,12 +408,12 @@
     <p class="vi">Gửi phản hồi, báo lỗi, và kiểm tra trạng thái bảo hành CPU của bạn.</p>
     <p class="en hidden">Submit feedback, report issues, and check your CPU warranty status.</p>
     <ul class="vi">
-      <li><a href="#">Form liên hệ kỹ thuật</a></li>
-      <li><a href="#">Tra cứu số serial & batch chip</a></li>
+      <li><a href="#" onclick="showSerialModal()">Form liên hệ kỹ thuật</a></li>
+      <li><a href="#" onclick="showSerialModal()">Tra cứu số serial & batch chip</a></li>
     </ul>
     <ul class="en hidden">
-      <li><a href="#">Technical contact form</a></li>
-      <li><a href="#">Check serial & batch number</a></li>
+      <li><a href="#" onclick="showSerialModal()">Technical contact form</a></li>
+      <li><a href="#" onclick="showSerialModal()">Check serial & batch number</a></li>
     </ul>
   </section>
 
@@ -460,7 +432,92 @@
     <p class="en hidden">&copy; 2025 IMD – Intel Micro Devices. All rights reserved.</p>
   </footer>
 
+  <!-- Driver Modal -->
+  <div id="driverModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('driverModal')">&times;</span>
+      <h2 class="vi">Driver VegaXE I Series</h2>
+      <h2 class="en hidden">VegaXE I Series Drivers</h2>
+      
+      <div class="driver-version">
+        <h3 class="vi">Bản 1.001 - Game Ready</h3>
+        <h3 class="en hidden">Version 1.001 - Game Ready</h3>
+        <p class="vi">Ngày phát hành: 15/10/2025</p>
+        <p class="en hidden">Release Date: 10/15/2025</p>
+        <p class="vi">Tối ưu cho các tựa game mới nhất bao gồm Cyberpunk 2077: Phantom Liberty và Starfield</p>
+        <p class="en hidden">Optimized for latest games including Cyberpunk 2077: Phantom Liberty and Starfield</p>
+        <div class="os-support">
+          <p class="vi">Hỗ trợ hệ điều hành: Windows 10/11 64-bit, Linux Kernel 6.0+</p>
+          <p class="en hidden">OS Support: Windows 10/11 64-bit, Linux Kernel 6.0+</p>
+        </div>
+        <a href="#" class="vi">Tải xuống</a>
+        <a href="#" class="en hidden">Download</a>
+      </div>
+      
+      <div class="driver-version">
+        <h3 class="vi">Bản 1.000 - Ổn định</h3>
+        <h3 class="en hidden">Version 1.000 - Stable</h3>
+        <p class="vi">Ngày phát hành: 01/09/2025</p>
+        <p class="en hidden">Release Date: 09/01/2025</p>
+        <p class="vi">Bản driver đầu tiên với hỗ trợ đầy đủ tính năng</p>
+        <p class="en hidden">Initial release with full feature support</p>
+        <div class="os-support">
+          <p class="vi">Hỗ trợ hệ điều hành: Windows 10/11 64-bit</p>
+          <p class="en hidden">OS Support: Windows 10/11 64-bit</p>
+        </div>
+        <a href="#" class="vi">Tải xuống</a>
+        <a href="#" class="en hidden">Download</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Serial Check Modal -->
+  <div id="serialModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('serialModal')">&times;</span>
+      <h2 class="vi">Tra Cứu Thông Tin CPU</h2>
+      <h2 class="en hidden">CPU Information Lookup</h2>
+      
+      <div class="vi">
+        <p>Nhập số serial và batch của CPU để kiểm tra thông tin bảo hành:</p>
+        <form>
+          <label for="serial">Số Serial:</label>
+          <input type="text" id="serial" name="serial" required>
+          
+          <label for="batch">Batch Number:</label>
+          <input type="text" id="batch" name="batch" required>
+          
+          <button type="submit">Kiểm Tra</button>
+        </form>
+        
+        <h3>Thông tin bảo hành:</h3>
+        <p>Bảo hành: 3 năm từ ngày sản xuất</p>
+        <p>Ngày sản xuất: Có thể tra cứu từ batch number</p>
+        <p>Trạng thái: Active (nếu hợp lệ)</p>
+      </div>
+      
+      <div class="en hidden">
+        <p>Enter CPU serial and batch numbers to check warranty information:</p>
+        <form>
+          <label for="serial-en">Serial Number:</label>
+          <input type="text" id="serial-en" name="serial" required>
+          
+          <label for="batch-en">Batch Number:</label>
+          <input type="text" id="batch-en" name="batch" required>
+          
+          <button type="submit">Check Status</button>
+        </form>
+        
+        <h3>Warranty Information:</h3>
+        <p>Warranty: 3 years from manufacture date</p>
+        <p>Manufacture Date: Can be determined from batch number</p>
+        <p>Status: Active (if valid)</p>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // Language toggle function
     document.getElementById('langToggle').addEventListener('click', function() {
       // Toggle all Vietnamese elements
       document.querySelectorAll('.vi').forEach(el => {
@@ -480,6 +537,26 @@
         btn.textContent = 'English';
       }
     });
+
+    // Modal functions
+    function showDriverModal() {
+      document.getElementById('driverModal').style.display = 'block';
+    }
+
+    function showSerialModal() {
+      document.getElementById('serialModal').style.display = 'block';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      if (event.target.className === 'modal') {
+        event.target.style.display = 'none';
+      }
+    }
   </script>
 </body>
 </html>
