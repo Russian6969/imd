@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intel Micro Devices (IMD) - Trang Chủ Chính Thức</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      background-color: #0d1117;
+      color: #e6edf3;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #161b22;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #30363d;
+      position: relative;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .logo img {
+      width: 60px;
+      height: auto;
+      filter: drop-shadow(0 0 5px rgba(0,255,255,0.4));
+    }
+    .logo span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #58a6ff;
+      text-shadow: 0 0 5px #0ff;
+    }
+    nav {
+      background-color: #161b22;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      gap: 30px;
+      border-bottom: 1px solid #30363d;
+    }
+    nav a {
+      color: #58a6ff;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease-in-out;
+    }
+    nav a:hover::after {
+      transform: scaleX(1);
+    }
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .highlight {
+      color: #ffa657;
+    }
+    footer {
+      background-color: #161b22;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #30363d;
+      font-size: 0.9rem;
+    }
+    .led-glow {
+      animation: rgb-glow 10s linear infinite;
+    }
+    @keyframes rgb-glow {
+      0% { text-shadow: 0 0 10px red; }
+      20% { text-shadow: 0 0 10px orange; }
+      40% { text-shadow: 0 0 10px yellow; }
+      60% { text-shadow: 0 0 10px lime; }
+      80% { text-shadow: 0 0 10px cyan; }
+      100% { text-shadow: 0 0 10px violet; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://i.redd.it/656zqdoqznd31.png" alt="IMD Logo">
+      <span class="led-glow">IMD</span>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#corezen">Dòng Corezen</a>
+    <a href="#driver">Trình Điều Khiển</a>
+    <a href="#support">Hỗ Trợ</a>
+    <a href="#warranty">Bảo Hành</a>
+  </nav>
+
+  <section id="corezen">
+    <h2>Dòng Vi Xử Lý <span class="highlight">Corezen I</span></h2>
+    <p>Corezen I là thế hệ vi xử lý đột phá đầu tiên sử dụng kiến trúc <strong>BlackDNA</strong> trên tiến trình 2nm. Bao gồm các phân khúc:</p>
+    <ul>
+      <li><strong>Corezen I-1125K</strong>: 6c/12t, hướng đến gaming phổ thông, trang bị VegaXE 125.</li>
+      <li><strong>Corezen I-1525K</strong>: 8c/16t, hiệu năng cao với giá thành hợp lý.</li>
+      <li><strong>Corezen I-1925K</strong>: 12c/24t, hiệu năng đỉnh cao cho game & workstation.</li>
+    </ul>
+  </section>
+
+  <section id="driver">
+    <h2>Trình Điều Khiển & BIOS</h2>
+    <p>Tải xuống firmware, BIOS và driver GPU/iGPU mới nhất từ trung tâm hỗ trợ:</p>
+    <ul>
+      <li><a href="#">Driver VegaXE I series</a></li>
+      <li><a href="#">Microcode BlackDNA Gen I</a></li>
+      <li><a href="#">BIOS cập nhật lỗi Corezen I-1525K</a></li>
+    </ul>
+  </section>
+
+  <section id="support">
+    <h2>Hỗ Trợ Kỹ Thuật</h2>
+    <p>Gửi phản hồi, báo lỗi, và kiểm tra trạng thái bảo hành CPU của bạn.</p>
+    <ul>
+      <li><a href="#">Form liên hệ kỹ thuật</a></li>
+      <li><a href="#">Tra cứu số serial & batch chip</a></li>
+    </ul>
+  </section>
+
+  <section id="warranty">
+    <h2>Chính Sách Bảo Hành</h2>
+    <p>IMD cam kết bảo hành <strong>3 năm 1 đổi 1</strong> cho các lỗi do nhà sản xuất. Trường hợp mod BIOS, OC không chính thức, hoặc phá hoại có thể bị giới hạn quyền lợi.</p>
+    <p>Các dòng CPU flagship có thể yêu cầu AIO ≥240mm để được bảo hành hiệu suất toàn phần.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 IMD – Intel Micro Devices. All rights reserved.</p>
+  </footer>
+</body>
+</html>
