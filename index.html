@@ -134,46 +134,38 @@
     .hidden {
       display: none;
     }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.8);
-    }
-    .modal-content {
+    .driver-version {
+      margin-top: 10px;
+      padding: 10px;
       background-color: #161b22;
-      margin: 10% auto;
-      padding: 20px;
-      border: 1px solid #30363d;
-      width: 80%;
-      max-width: 700px;
       border-radius: 5px;
     }
-    .close {
-      color: #aaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
+    .serial-check {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #161b22;
+      border-radius: 5px;
+      display: none;
     }
-    .close:hover {
-      color: #fff;
+    .serial-check.active {
+      display: block;
     }
-    .driver-version {
-      margin: 10px 0;
+    .tech-feature {
+      margin: 20px 0;
+      padding: 15px;
+      background-color: #161b22;
+      border-left: 3px solid #58a6ff;
+    }
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .spec-item {
       padding: 10px;
-      background-color: #1f2937;
-      border-radius: 4px;
-    }
-    .os-support {
-      margin-top: 5px;
-      font-size: 0.9em;
-      color: #8b949e;
+      background-color: #161b22;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -203,37 +195,66 @@
   <section id="corezen">
     <h2 class="vi">Dòng Vi Xử Lý <span class="highlight">Corezen I</span></h2>
     <h2 class="en hidden">Corezen I Processor Series</h2>
-    <p class="vi">Corezen I là thế hệ vi xử lý đột phá đầu tiên sử dụng kiến trúc <strong>BlackDNA</strong> trên tiến trình 2nm. Bao gồm các phân khúc:</p>
-    <p class="en hidden">Corezen I is the first breakthrough processor generation using <strong>BlackDNA</strong> architecture on 2nm process. Includes the following segments:</p>
-    <ul class="vi">
-      <li><strong>Corezen I-1125K</strong>: 6c/12t, hướng đến gaming phổ thông, trang bị VegaXE 125.</li>
-      <li><strong>Corezen I-1525K</strong>: 8c/16t, hiệu năng cao với giá thành hợp lý.</li>
-      <li><strong>Corezen I-1925K</strong>: 12c/24t, hiệu năng đỉnh cao cho game & workstation.</li>
-    </ul>
-    <ul class="en hidden">
-      <li><strong>Corezen I-1125K</strong>: 6c/12t, aimed at mainstream gaming, equipped with VegaXE 125.</li>
-      <li><strong>Corezen I-1525K</strong>: 8c/16t, high performance with reasonable price.</li>
-      <li><strong>Corezen I-1925K</strong>: 12c/24t, peak performance for gaming & workstation.</li>
-    </ul>
+    
+    <div class="tech-feature vi">
+      <p><strong>Kiến trúc BlackDNA 2nm – Bước nhảy công nghệ mang tính cách mạng</strong></p>
+      <p>Dòng vi xử lý Corezen I đến từ Intel Micro Devices (IMD) là thế hệ CPU đầu tiên ứng dụng kiến trúc BlackDNA tiên tiến – được chế tạo trên tiến trình 2nm. Kết hợp hiệu năng mạnh mẽ với khả năng tùy biến cao, Corezen I hướng đến mọi phân khúc: từ game thủ phổ thông, người dùng sáng tạo nội dung, đến người làm việc chuyên nghiệp.</p>
+    </div>
+    
+    <div class="tech-feature en hidden">
+      <p><strong>BlackDNA 2nm Architecture – Revolutionary Technological Leap</strong></p>
+      <p>The Corezen I processor series from Intel Micro Devices (IMD) is the first CPU generation to utilize the advanced BlackDNA architecture – manufactured on a 2nm process. Combining powerful performance with high customization, Corezen I targets all segments: from mainstream gamers, content creators, to professional users.</p>
+    </div>
+    
+    <div class="specs-grid vi">
+      <div class="spec-item">
+        <p><strong>FP/LP-Core với cơ chế chuyển đổi thông minh</strong></p>
+        <p>FP-Core (Full Performance): Tự động kích hoạt khi chơi game, render hoặc xử lý nặng</p>
+        <p>LP-Core (Low Power): Tự động duy trì hệ thống ở trạng thái mượt mà khi chạy nhẹ</p>
+      </div>
+      <div class="spec-item">
+        <p><strong>iGPU VegaXE I – Sức mạnh đồ họa tích hợp</strong></p>
+        <p>VegaXE 125 (GTX 750 Ti tương đương)</p>
+        <p>VegaXE 525 (GTX 1060 tương đương)</p>
+        <p>VegaXE 925 (GTX 1660 Ti tương đương)</p>
+        <p>Hỗ trợ xuất tối đa 3 màn hình, độ phân giải lên đến 4K</p>
+      </div>
+    </div>
+    
+    <div class="specs-grid en hidden">
+      <div class="spec-item">
+        <p><strong>FP/LP-Core with Intelligent Switching</strong></p>
+        <p>FP-Core: Auto-activates during gaming/rendering</p>
+        <p>LP-Core: Maintains smooth operation for light tasks</p>
+      </div>
+      <div class="spec-item">
+        <p><strong>iGPU VegaXE I – Integrated Graphics</strong></p>
+        <p>VegaXE 125 (Equivalent to GTX 750 Ti)</p>
+        <p>VegaXE 525 (Equivalent to GTX 1060)</p>
+        <p>VegaXE 925 (Equivalent to GTX 1660 Ti)</p>
+        <p>Supports up to 3 displays at 4K resolution</p>
+      </div>
+    </div>
 
     <h3 class="vi">COREZEN I-1125 SERIES (PHỔ THÔNG)</h3>
     <h3 class="en hidden">COREZEN I-1125 SERIES (MAINSTREAM)</h3>
     <table class="product-table">
       <thead>
-        <tr>
-          <th class="vi">Mã CPU</th>
-          <th class="vi">Cấu hình</th>
-          <th class="vi">Xung Base → Boost</th>
-          <th class="vi">OC thủ công?</th>
-          <th class="vi">iGPU</th>
-          <th class="vi">Giá</th>
-          
-          <th class="en hidden">CPU Code</th>
-          <th class="en hidden">Configuration</th>
-          <th class="en hidden">Base → Boost Clock</th>
-          <th class="en hidden">Manual OC?</th>
-          <th class="en hidden">iGPU</th>
-          <th class="en hidden">Price</th>
+        <tr class="vi">
+          <th>Mã CPU</th>
+          <th>Cấu hình</th>
+          <th>Xung Base → Boost</th>
+          <th>OC thủ công</th>
+          <th>iGPU</th>
+          <th>Giá (VND)</th>
+        </tr>
+        <tr class="en hidden">
+          <th>CPU Code</th>
+          <th>Config</th>
+          <th>Base → Boost</th>
+          <th>Manual OC</th>
+          <th>iGPU</th>
+          <th>Price (USD)</th>
         </tr>
       </thead>
       <tbody>
@@ -241,33 +262,34 @@
           <td>1125K</td>
           <td>6C/12T</td>
           <td>2.6 → 4.8GHz</td>
-          <td class="vi">✓ Lên ~5.3GHz</td>
-          <td class="en hidden">Yes (~5.3GHz)</td>
-          <td>Vega XE I 125</td>
-          <td class="vi">3.890.000 VND</td>
-          <td class="en hidden">$169.99</td>
+          <td class="vi">Lên ~5.3GHz</td>
+          <td class="vi">Vega XE I 125</td>
+          <td class="vi">3.890.000</td>
+          <td class="en hidden">Up to ~5.3GHz</td>
+          <td class="en hidden">Vega XE I 125</td>
+          <td class="en hidden">$165</td>
         </tr>
         <tr>
           <td>1125KF</td>
           <td>6C/12T</td>
           <td>2.6 → 4.8GHz</td>
-          <td class="vi">✓ Lên ~5.3GHz</td>
-          <td class="en hidden">Yes (~5.3GHz)</td>
+          <td class="vi">Lên ~5.3GHz</td>
           <td class="vi">Bị khóa</td>
-          <td class="en hidden">Locked</td>
-          <td class="vi">3.690.000 VND</td>
-          <td class="en hidden">$159.99</td>
+          <td class="vi">3.690.000</td>
+          <td class="en hidden">Up to ~5.3GHz</td>
+          <td class="en hidden">Disabled</td>
+          <td class="en hidden">$157</td>
         </tr>
         <tr>
           <td>1125F</td>
           <td>6C/12T</td>
           <td>2.6 → 4.8GHz</td>
-          <td class="vi">✗ Không mở OC</td>
-          <td class="en hidden">OC Locked</td>
+          <td class="vi">Không hỗ trợ</td>
           <td class="vi">Bị khóa</td>
-          <td class="en hidden">Locked</td>
-          <td class="vi">3.390.000 VND</td>
-          <td class="en hidden">$149.99</td>
+          <td class="vi">3.390.000</td>
+          <td class="en hidden">Not supported</td>
+          <td class="en hidden">Disabled</td>
+          <td class="en hidden">$144</td>
         </tr>
       </tbody>
     </table>
@@ -276,20 +298,21 @@
     <h3 class="en hidden">COREZEN I-1525 SERIES (MID-RANGE)</h3>
     <table class="product-table">
       <thead>
-        <tr>
-          <th class="vi">Mã CPU</th>
-          <th class="vi">Cấu hình</th>
-          <th class="vi">Xung Base → Boost</th>
-          <th class="vi">OC thủ công?</th>
-          <th class="vi">iGPU</th>
-          <th class="vi">Giá</th>
-          
-          <th class="en hidden">CPU Code</th>
-          <th class="en hidden">Configuration</th>
-          <th class="en hidden">Base → Boost Clock</th>
-          <th class="en hidden">Manual OC?</th>
-          <th class="en hidden">iGPU</th>
-          <th class="en hidden">Price</th>
+        <tr class="vi">
+          <th>Mã CPU</th>
+          <th>Cấu hình</th>
+          <th>Xung Base → Boost</th>
+          <th>OC thủ công</th>
+          <th>iGPU</th>
+          <th>Giá (VND)</th>
+        </tr>
+        <tr class="en hidden">
+          <th>CPU Code</th>
+          <th>Config</th>
+          <th>Base → Boost</th>
+          <th>Manual OC</th>
+          <th>iGPU</th>
+          <th>Price (USD)</th>
         </tr>
       </thead>
       <tbody>
@@ -297,33 +320,34 @@
           <td>1525K</td>
           <td>8C/16T</td>
           <td>2.8 → 5.2GHz</td>
-          <td class="vi">✔ Lên ~5.7GHz</td>
-          <td class="en hidden">Yes (~5.7GHz)</td>
-          <td>Vega XE I 525</td>
-          <td class="vi">6.990.000 VND</td>
-          <td class="en hidden">$299.99</td>
+          <td class="vi">Lên ~5.7GHz</td>
+          <td class="vi">Vega XE I 525</td>
+          <td class="vi">6.990.000</td>
+          <td class="en hidden">Up to ~5.7GHz</td>
+          <td class="en hidden">Vega XE I 525</td>
+          <td class="en hidden">$297</td>
         </tr>
         <tr>
           <td>1525KF</td>
           <td>8C/16T</td>
           <td>2.8 → 5.2GHz</td>
-          <td class="vi">✔ Lên ~5.7GHz</td>
-          <td class="en hidden">Yes (~5.7GHz)</td>
+          <td class="vi">Lên ~5.7GHz</td>
           <td class="vi">Bị khóa</td>
-          <td class="en hidden">Locked</td>
-          <td class="vi">6.590.000 VND</td>
-          <td class="en hidden">$279.99</td>
+          <td class="vi">6.590.000</td>
+          <td class="en hidden">Up to ~5.7GHz</td>
+          <td class="en hidden">Disabled</td>
+          <td class="en hidden">$280</td>
         </tr>
         <tr>
           <td>1525F</td>
           <td>8C/16T</td>
           <td>2.8 → 5.2GHz</td>
-          <td class="vi">✕ Không mở OC</td>
-          <td class="en hidden">OC Locked</td>
+          <td class="vi">Không hỗ trợ</td>
           <td class="vi">Bị khóa</td>
-          <td class="en hidden">Locked</td>
-          <td class="vi">6.190.000 VND</td>
-          <td class="en hidden">$259.99</td>
+          <td class="vi">6.190.000</td>
+          <td class="en hidden">Not supported</td>
+          <td class="en hidden">Disabled</td>
+          <td class="en hidden">$263</td>
         </tr>
       </tbody>
     </table>
@@ -332,20 +356,21 @@
     <h3 class="en hidden">COREZEN I-1925 SERIES (HIGH-END)</h3>
     <table class="product-table">
       <thead>
-        <tr>
-          <th class="vi">Mã CPU</th>
-          <th class="vi">Cấu hình</th>
-          <th class="vi">Xung Base → Boost</th>
-          <th class="vi">OC thủ công?</th>
-          <th class="vi">iGPU</th>
-          <th class="vi">Giá</th>
-          
-          <th class="en hidden">CPU Code</th>
-          <th class="en hidden">Configuration</th>
-          <th class="en hidden">Base → Boost Clock</th>
-          <th class="en hidden">Manual OC?</th>
-          <th class="en hidden">iGPU</th>
-          <th class="en hidden">Price</th>
+        <tr class="vi">
+          <th>Mã CPU</th>
+          <th>Cấu hình</th>
+          <th>Xung Base → Boost</th>
+          <th>OC thủ công</th>
+          <th>iGPU</th>
+          <th>Giá (VND)</th>
+        </tr>
+        <tr class="en hidden">
+          <th>CPU Code</th>
+          <th>Config</th>
+          <th>Base → Boost</th>
+          <th>Manual OC</th>
+          <th>iGPU</th>
+          <th>Price (USD)</th>
         </tr>
       </thead>
       <tbody>
@@ -353,33 +378,34 @@
           <td>1925K</td>
           <td>12C/24T</td>
           <td>3.0 → 5.6GHz</td>
-          <td class="vi">✔ Lên ~5.9GHz+</td>
-          <td class="en hidden">Yes (~5.9GHz+)</td>
-          <td>Vega XE 1925</td>
-          <td class="vi">10.990.000 VND</td>
-          <td class="en hidden">$499.99</td>
+          <td class="vi">Lên ~5.9GHz+</td>
+          <td class="vi">Vega XE 1925</td>
+          <td class="vi">10.990.000</td>
+          <td class="en hidden">Up to ~5.9GHz+</td>
+          <td class="en hidden">Vega XE 1925</td>
+          <td class="en hidden">$467</td>
         </tr>
         <tr>
           <td>1925KF</td>
           <td>12C/24T</td>
           <td>3.0 → 5.6GHz</td>
-          <td class="vi">✔ Lên ~5.9GHz+</td>
-          <td class="en hidden">Yes (~5.9GHz+)</td>
+          <td class="vi">Lên ~5.9GHz+</td>
           <td class="vi">Bị khóa</td>
-          <td class="en hidden">Locked</td>
-          <td class="vi">10.690.000 VND</td>
-          <td class="en hidden">$479.99</td>
+          <td class="vi">10.690.000</td>
+          <td class="en hidden">Up to ~5.9GHz+</td>
+          <td class="en hidden">Disabled</td>
+          <td class="en hidden">$454</td>
         </tr>
         <tr>
           <td>1925F</td>
           <td>12C/24T</td>
           <td>3.0 → 5.6GHz</td>
-          <td class="vi">✕ Không mở OC</td>
-          <td class="en hidden">OC Locked</td>
+          <td class="vi">Không hỗ trợ</td>
           <td class="vi">Bị khóa</td>
-          <td class="en hidden">Locked</td>
-          <td class="vi">10.290.000 VND</td>
-          <td class="en hidden">$459.99</td>
+          <td class="vi">10.290.000</td>
+          <td class="en hidden">Not supported</td>
+          <td class="en hidden">Disabled</td>
+          <td class="en hidden">$437</td>
         </tr>
       </tbody>
     </table>
@@ -388,15 +414,50 @@
   <section id="driver">
     <h2 class="vi">Trình Điều Khiển & BIOS</h2>
     <h2 class="en hidden">Drivers & BIOS</h2>
-    <p class="vi">Tải xuống firmware, BIOS và driver GPU/iGPU mới nhất từ trung tâm hỗ trợ:</p>
-    <p class="en hidden">Download the latest firmware, BIOS and GPU/iGPU drivers from support center:</p>
+    
+    <div class="vi">
+      <p><a href="#" class="driver-link">Driver VegaXE I series</a></p>
+      <div class="driver-version" style="display:none;">
+        <p><strong>Bản driver hiện có:</strong></p>
+        <p><strong>1.000 - Bản ổn định</strong></p>
+        <p>- Hỗ trợ đầy đủ tính năng cơ bản</p>
+        <p>- Tương thích tất cả ứng dụng</p>
+        
+        <p><strong>1.001 - Game Ready</strong></p>
+        <p>- Tối ưu cho các tựa game mới nhất</p>
+        <p>- Cải thiện hiệu năng lên đến 15%</p>
+        <p>- Hỗ trợ ray tracing trên iGPU</p>
+        
+        <p><strong>Hệ điều hành hỗ trợ:</strong></p>
+        <p>- Windows 10/11 64-bit</p>
+        <p>- Linux Kernel 5.15+</p>
+      </div>
+    </div>
+    
+    <div class="en hidden">
+      <p><a href="#" class="driver-link">VegaXE I series Driver</a></p>
+      <div class="driver-version" style="display:none;">
+        <p><strong>Available versions:</strong></p>
+        <p><strong>1.000 - Stable</strong></p>
+        <p>- Full basic feature support</p>
+        <p>- Compatible with all applications</p>
+        
+        <p><strong>1.001 - Game Ready</strong></p>
+        <p>- Optimized for latest games</p>
+        <p>- Up to 15% performance improvement</p>
+        <p>- Ray tracing support on iGPU</p>
+        
+        <p><strong>Supported OS:</strong></p>
+        <p>- Windows 10/11 64-bit</p>
+        <p>- Linux Kernel 5.15+</p>
+      </div>
+    </div>
+    
     <ul class="vi">
-      <li><a href="#" onclick="showDriverModal()">Driver VegaXE I series</a></li>
       <li><a href="#">Microcode BlackDNA Gen I</a></li>
       <li><a href="#">BIOS cập nhật lỗi Corezen I-1525K</a></li>
     </ul>
     <ul class="en hidden">
-      <li><a href="#" onclick="showDriverModal()">VegaXE I series Driver</a></li>
       <li><a href="#">BlackDNA Gen I Microcode</a></li>
       <li><a href="#">BIOS update for Corezen I-1525K</a></li>
     </ul>
@@ -405,26 +466,84 @@
   <section id="support">
     <h2 class="vi">Hỗ Trợ Kỹ Thuật</h2>
     <h2 class="en hidden">Technical Support</h2>
-    <p class="vi">Gửi phản hồi, báo lỗi, và kiểm tra trạng thái bảo hành CPU của bạn.</p>
-    <p class="en hidden">Submit feedback, report issues, and check your CPU warranty status.</p>
+    
+    <div class="vi">
+      <p><a href="#" class="serial-link">Tra cứu số serial & batch chip</a></p>
+      <div class="serial-check">
+        <h4>Tra cứu thông tin sản phẩm</h4>
+        <div style="margin-bottom: 15px;">
+          <p>Nhập số serial (in trên hộp hoặc bề mặt CPU):</p>
+          <input type="text" placeholder="Ví dụ: IMD-25A1-BX9K-7Z2Y" style="width: 100%; padding: 8px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+          <p>Hoặc tải lên hình ảnh mã QR:</p>
+          <input type="file" accept="image/*">
+        </div>
+        <button style="padding: 10px 20px; background-color: #58a6ff; border: none; border-radius: 4px; cursor: pointer;">Kiểm tra</button>
+        <div style="margin-top: 20px; padding: 15px; background-color: #161b22; border-radius: 5px; display: none;" id="resultBox">
+          <h4>Thông tin sản phẩm</h4>
+          <p>Model: Corezen I-1925K</p>
+          <p>Ngày sản xuất: 15/06/2025</p>
+          <p>Hết hạn bảo hành: 15/06/2028</p>
+          <p>Trạng thái: Đang hoạt động tốt</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="en hidden">
+      <p><a href="#" class="serial-link">Check serial & batch number</a></p>
+      <div class="serial-check">
+        <h4>Product Information Check</h4>
+        <div style="margin-bottom: 15px;">
+          <p>Enter serial number (printed on box or CPU surface):</p>
+          <input type="text" placeholder="Example: IMD-25A1-BX9K-7Z2Y" style="width: 100%; padding: 8px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+          <p>Or upload QR code image:</p>
+          <input type="file" accept="image/*">
+        </div>
+        <button style="padding: 10px 20px; background-color: #58a6ff; border: none; border-radius: 4px; cursor: pointer;">Check</button>
+        <div style="margin-top: 20px; padding: 15px; background-color: #161b22; border-radius: 5px; display: none;" id="resultBoxEn">
+          <h4>Product Information</h4>
+          <p>Model: Corezen I-1925K</p>
+          <p>Manufacture Date: 06/15/2025</p>
+          <p>Warranty Expires: 06/15/2028</p>
+          <p>Status: Working properly</p>
+        </div>
+      </div>
+    </div>
+    
     <ul class="vi">
-      <li><a href="#" onclick="showSerialModal()">Form liên hệ kỹ thuật</a></li>
-      <li><a href="#" onclick="showSerialModal()">Tra cứu số serial & batch chip</a></li>
+      <li><a href="#">Form liên hệ kỹ thuật</a></li>
     </ul>
     <ul class="en hidden">
-      <li><a href="#" onclick="showSerialModal()">Technical contact form</a></li>
-      <li><a href="#" onclick="showSerialModal()">Check serial & batch number</a></li>
+      <li><a href="#">Technical contact form</a></li>
     </ul>
   </section>
 
   <section id="warranty">
     <h2 class="vi">Chính Sách Bảo Hành</h2>
     <h2 class="en hidden">Warranty Policy</h2>
-    <p class="vi">IMD cam kết bảo hành <strong>3 năm 1 đổi 1</strong> cho các lỗi do nhà sản xuất. Trường hợp mod BIOS, OC không chính thức, hoặc phá hoại có thể bị giới hạn quyền lợi.</p>
-    <p class="vi">Các dòng CPU flagship có thể yêu cầu AIO ≥240mm để được bảo hành hiệu suất toàn phần.</p>
     
-    <p class="en hidden">IMD guarantees <strong>3 years 1-to-1 replacement</strong> warranty for manufacturer defects. Cases of BIOS modding, unofficial overclocking, or sabotage may have limited warranty coverage.</p>
-    <p class="en hidden">Flagship CPU models may require ≥240mm AIO for full performance warranty coverage.</p>
+    <div class="vi">
+      <p>IMD cam kết bảo hành <strong>3 năm 1 đổi 1</strong> cho các lỗi do nhà sản xuất.</p>
+      <div class="tech-feature">
+        <p><strong>Điều kiện bảo hành:</strong></p>
+        <p>- Không có dấu hiệu vật lý hư hỏng</p>
+        <p>- Không tự ý tháo rời hoặc sửa chữa</p>
+        <p>- Các dòng CPU flagship yêu cầu hệ thống tản nhiệt AIO ≥240mm</p>
+      </div>
+    </div>
+    
+    <div class="en hidden">
+      <p>IMD guarantees <strong>3 years 1-to-1 replacement</strong> warranty for manufacturer defects.</p>
+      <div class="tech-feature">
+        <p><strong>Warranty conditions:</strong></p>
+        <p>- No physical damage signs</p>
+        <p>- Not disassembled or repaired by user</p>
+        <p>- Flagship CPUs require ≥240mm AIO cooling system</p>
+      </div>
+    </div>
   </section>
 
   <footer>
@@ -432,131 +551,41 @@
     <p class="en hidden">&copy; 2025 IMD – Intel Micro Devices. All rights reserved.</p>
   </footer>
 
-  <!-- Driver Modal -->
-  <div id="driverModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('driverModal')">&times;</span>
-      <h2 class="vi">Driver VegaXE I Series</h2>
-      <h2 class="en hidden">VegaXE I Series Drivers</h2>
-      
-      <div class="driver-version">
-        <h3 class="vi">Bản 1.001 - Game Ready</h3>
-        <h3 class="en hidden">Version 1.001 - Game Ready</h3>
-        <p class="vi">Ngày phát hành: 15/10/2025</p>
-        <p class="en hidden">Release Date: 10/15/2025</p>
-        <p class="vi">Tối ưu cho các tựa game mới nhất bao gồm Cyberpunk 2077: Phantom Liberty và Starfield</p>
-        <p class="en hidden">Optimized for latest games including Cyberpunk 2077: Phantom Liberty and Starfield</p>
-        <div class="os-support">
-          <p class="vi">Hỗ trợ hệ điều hành: Windows 10/11 64-bit, Linux Kernel 6.0+</p>
-          <p class="en hidden">OS Support: Windows 10/11 64-bit, Linux Kernel 6.0+</p>
-        </div>
-        <a href="#" class="vi">Tải xuống</a>
-        <a href="#" class="en hidden">Download</a>
-      </div>
-      
-      <div class="driver-version">
-        <h3 class="vi">Bản 1.000 - Ổn định</h3>
-        <h3 class="en hidden">Version 1.000 - Stable</h3>
-        <p class="vi">Ngày phát hành: 01/09/2025</p>
-        <p class="en hidden">Release Date: 09/01/2025</p>
-        <p class="vi">Bản driver đầu tiên với hỗ trợ đầy đủ tính năng</p>
-        <p class="en hidden">Initial release with full feature support</p>
-        <div class="os-support">
-          <p class="vi">Hỗ trợ hệ điều hành: Windows 10/11 64-bit</p>
-          <p class="en hidden">OS Support: Windows 10/11 64-bit</p>
-        </div>
-        <a href="#" class="vi">Tải xuống</a>
-        <a href="#" class="en hidden">Download</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Serial Check Modal -->
-  <div id="serialModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal('serialModal')">&times;</span>
-      <h2 class="vi">Tra Cứu Thông Tin CPU</h2>
-      <h2 class="en hidden">CPU Information Lookup</h2>
-      
-      <div class="vi">
-        <p>Nhập số serial và batch của CPU để kiểm tra thông tin bảo hành:</p>
-        <form>
-          <label for="serial">Số Serial:</label>
-          <input type="text" id="serial" name="serial" required>
-          
-          <label for="batch">Batch Number:</label>
-          <input type="text" id="batch" name="batch" required>
-          
-          <button type="submit">Kiểm Tra</button>
-        </form>
-        
-        <h3>Thông tin bảo hành:</h3>
-        <p>Bảo hành: 3 năm từ ngày sản xuất</p>
-        <p>Ngày sản xuất: Có thể tra cứu từ batch number</p>
-        <p>Trạng thái: Active (nếu hợp lệ)</p>
-      </div>
-      
-      <div class="en hidden">
-        <p>Enter CPU serial and batch numbers to check warranty information:</p>
-        <form>
-          <label for="serial-en">Serial Number:</label>
-          <input type="text" id="serial-en" name="serial" required>
-          
-          <label for="batch-en">Batch Number:</label>
-          <input type="text" id="batch-en" name="batch" required>
-          
-          <button type="submit">Check Status</button>
-        </form>
-        
-        <h3>Warranty Information:</h3>
-        <p>Warranty: 3 years from manufacture date</p>
-        <p>Manufacture Date: Can be determined from batch number</p>
-        <p>Status: Active (if valid)</p>
-      </div>
-    </div>
-  </div>
-
   <script>
-    // Language toggle function
+    // Language toggle
     document.getElementById('langToggle').addEventListener('click', function() {
-      // Toggle all Vietnamese elements
-      document.querySelectorAll('.vi').forEach(el => {
-        el.classList.toggle('hidden');
-      });
+      document.querySelectorAll('.vi').forEach(el => el.classList.toggle('hidden'));
+      document.querySelectorAll('.en').forEach(el => el.classList.toggle('hidden'));
       
-      // Toggle all English elements
-      document.querySelectorAll('.en').forEach(el => {
-        el.classList.toggle('hidden');
-      });
-      
-      // Update button text
       const btn = document.getElementById('langToggle');
-      if (btn.textContent === 'English') {
-        btn.textContent = 'Tiếng Việt';
-      } else {
-        btn.textContent = 'English';
-      }
+      btn.textContent = btn.textContent === 'English' ? 'Tiếng Việt' : 'English';
     });
 
-    // Modal functions
-    function showDriverModal() {
-      document.getElementById('driverModal').style.display = 'block';
-    }
+    // Driver version toggle
+    document.querySelectorAll('.driver-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const versionDiv = this.parentElement.nextElementSibling;
+        versionDiv.style.display = versionDiv.style.display === 'none' ? 'block' : 'none';
+      });
+    });
 
-    function showSerialModal() {
-      document.getElementById('serialModal').style.display = 'block';
-    }
+    // Serial check toggle
+    document.querySelectorAll('.serial-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const checkDiv = this.parentElement.nextElementSibling;
+        checkDiv.classList.toggle('active');
+      });
+    });
 
-    function closeModal(modalId) {
-      document.getElementById(modalId).style.display = 'none';
-    }
-
-    // Close modal when clicking outside
-    window.onclick = function(event) {
-      if (event.target.className === 'modal') {
-        event.target.style.display = 'none';
-      }
-    }
+    // Simulate serial check
+    document.querySelectorAll('.serial-check button').forEach(button => {
+      button.addEventListener('click', function() {
+        const resultBox = this.parentElement.querySelector('#resultBox, #resultBoxEn');
+        resultBox.style.display = 'block';
+      });
+    });
   </script>
 </body>
 </html>
