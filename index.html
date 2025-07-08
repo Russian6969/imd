@@ -92,6 +92,48 @@
       80% { text-shadow: 0 0 10px cyan; }
       100% { text-shadow: 0 0 10px violet; }
     }
+    .product-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      border: 1px solid #30363d;
+    }
+    .product-table th, .product-table td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #30363d;
+    }
+    .product-table th {
+      background-color: #161b22;
+      color: #58a6ff;
+    }
+    .product-table tr:nth-child(even) {
+      background-color: #161b22;
+    }
+    .product-table tr:hover {
+      background-color: #1f2937;
+    }
+    .language-switcher {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    .language-btn {
+      background-color: #58a6ff;
+      color: #0d1117;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .language-btn:hover {
+      background-color: #79b8ff;
+    }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -100,52 +142,251 @@
       <img src="https://i.redd.it/656zqdoqznd31.png" alt="IMD Logo">
       <span class="led-glow">IMD</span>
     </div>
+    <div class="language-switcher">
+      <button class="language-btn" id="langToggle">English</button>
+    </div>
   </header>
 
   <nav>
-    <a href="#corezen">Dòng Corezen</a>
-    <a href="#driver">Trình Điều Khiển</a>
-    <a href="#support">Hỗ Trợ</a>
-    <a href="#warranty">Bảo Hành</a>
+    <a href="#corezen" class="vi">Dòng Corezen</a>
+    <a href="#driver" class="vi">Trình Điều Khiển</a>
+    <a href="#support" class="vi">Hỗ Trợ</a>
+    <a href="#warranty" class="vi">Bảo Hành</a>
+    
+    <a href="#corezen" class="en hidden">Corezen Series</a>
+    <a href="#driver" class="en hidden">Drivers</a>
+    <a href="#support" class="en hidden">Support</a>
+    <a href="#warranty" class="en hidden">Warranty</a>
   </nav>
 
   <section id="corezen">
-    <h2>Dòng Vi Xử Lý <span class="highlight">Corezen I</span></h2>
-    <p>Corezen I là thế hệ vi xử lý đột phá đầu tiên sử dụng kiến trúc <strong>BlackDNA</strong> trên tiến trình 2nm. Bao gồm các phân khúc:</p>
-    <ul>
+    <h2 class="vi">Dòng Vi Xử Lý <span class="highlight">Corezen I</span></h2>
+    <h2 class="en hidden">Corezen I Processor Series</h2>
+    <p class="vi">Corezen I là thế hệ vi xử lý đột phá đầu tiên sử dụng kiến trúc <strong>BlackDNA</strong> trên tiến trình 2nm. Bao gồm các phân khúc:</p>
+    <p class="en hidden">Corezen I is the first breakthrough processor generation using <strong>BlackDNA</strong> architecture on 2nm process. Includes the following segments:</p>
+    <ul class="vi">
       <li><strong>Corezen I-1125K</strong>: 6c/12t, hướng đến gaming phổ thông, trang bị VegaXE 125.</li>
       <li><strong>Corezen I-1525K</strong>: 8c/16t, hiệu năng cao với giá thành hợp lý.</li>
       <li><strong>Corezen I-1925K</strong>: 12c/24t, hiệu năng đỉnh cao cho game & workstation.</li>
     </ul>
+    <ul class="en hidden">
+      <li><strong>Corezen I-1125K</strong>: 6c/12t, aimed at mainstream gaming, equipped with VegaXE 125.</li>
+      <li><strong>Corezen I-1525K</strong>: 8c/16t, high performance with reasonable price.</li>
+      <li><strong>Corezen I-1925K</strong>: 12c/24t, peak performance for gaming & workstation.</li>
+    </ul>
+
+    <h3 class="vi">COREZEN I-1125 SERIES (PHỔ THÔNG)</h3>
+    <h3 class="en hidden">COREZEN I-1125 SERIES (MAINSTREAM)</h3>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th class="vi">Mã CPU</th>
+          <th class="vi">Cấu hình</th>
+          <th class="vi">Xung Base → Boost</th>
+          <th class="vi">OC thủ công?</th>
+          <th class="vi">iGPU</th>
+          <th class="vi">Giá</th>
+          
+          <th class="en hidden">CPU Code</th>
+          <th class="en hidden">Configuration</th>
+          <th class="en hidden">Base → Boost Clock</th>
+          <th class="en hidden">Manual OC?</th>
+          <th class="en hidden">iGPU</th>
+          <th class="en hidden">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1125K</td>
+          <td>6C/12T</td>
+          <td>2.6 → 4.8GHz</td>
+          <td>✓ Lên ~5.3GHz</td>
+          <td>Vega XE I 125</td>
+          <td>3.890.000 VND</td>
+        </tr>
+        <tr>
+          <td>1125KF</td>
+          <td>6C/12T</td>
+          <td>2.6 → 4.8GHz</td>
+          <td>✓ Lên ~5.3GHz</td>
+          <td>Bị khóa</td>
+          <td>3.690.000 VND</td>
+        </tr>
+        <tr>
+          <td>1125F</td>
+          <td>6C/12T</td>
+          <td>2.6 → 4.8GHz</td>
+          <td>✗ Không mở OC</td>
+          <td>Bị khóa</td>
+          <td>3.390.000 VND</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="vi">COREZEN I-1525 SERIES (TÂM TRUNG)</h3>
+    <h3 class="en hidden">COREZEN I-1525 SERIES (MID-RANGE)</h3>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th class="vi">Mã CPU</th>
+          <th class="vi">Cấu hình</th>
+          <th class="vi">Xung Base → Boost</th>
+          <th class="vi">OC thủ công?</th>
+          <th class="vi">iGPU</th>
+          <th class="vi">Giá</th>
+          
+          <th class="en hidden">CPU Code</th>
+          <th class="en hidden">Configuration</th>
+          <th class="en hidden">Base → Boost Clock</th>
+          <th class="en hidden">Manual OC?</th>
+          <th class="en hidden">iGPU</th>
+          <th class="en hidden">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1525K</td>
+          <td>8C/16T</td>
+          <td>2.8 → 5.2GHz</td>
+          <td>✔ Lên ~5.7GHz</td>
+          <td>Vega XE I 525</td>
+          <td>6.990.000 VND</td>
+        </tr>
+        <tr>
+          <td>1525KF</td>
+          <td>8C/16T</td>
+          <td>2.8 → 5.2GHz</td>
+          <td>✔ Lên ~5.7GHz</td>
+          <td>Bị khóa</td>
+          <td>6.590.000 VND</td>
+        </tr>
+        <tr>
+          <td>1525F</td>
+          <td>8C/16T</td>
+          <td>2.8 → 5.2GHz</td>
+          <td>✕ Không mở OC</td>
+          <td>Bị khóa</td>
+          <td>6.190.000 VND</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 class="vi">COREZEN I-1925 SERIES (HI-END)</h3>
+    <h3 class="en hidden">COREZEN I-1925 SERIES (HIGH-END)</h3>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th class="vi">Mã CPU</th>
+          <th class="vi">Cấu hình</th>
+          <th class="vi">Xung Base → Boost</th>
+          <th class="vi">OC thủ công?</th>
+          <th class="vi">iGPU</th>
+          <th class="vi">Giá</th>
+          
+          <th class="en hidden">CPU Code</th>
+          <th class="en hidden">Configuration</th>
+          <th class="en hidden">Base → Boost Clock</th>
+          <th class="en hidden">Manual OC?</th>
+          <th class="en hidden">iGPU</th>
+          <th class="en hidden">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1925K</td>
+          <td>12C/24T</td>
+          <td>3.0 → 5.6GHz</td>
+          <td>✔ Lên ~5.9GHz+</td>
+          <td>Vega XE 1925</td>
+          <td>10.990.000 VND</td>
+        </tr>
+        <tr>
+          <td>1925KF</td>
+          <td>12C/24T</td>
+          <td>3.0 → 5.6GHz</td>
+          <td>✔ Lên ~5.9GHz+</td>
+          <td>Bị khóa</td>
+          <td>10.690.000 VND</td>
+        </tr>
+        <tr>
+          <td>1925F</td>
+          <td>12C/24T</td>
+          <td>3.0 → 5.6GHz</td>
+          <td>✕ Không mở OC</td>
+          <td>Bị khóa</td>
+          <td>10.290.000 VND</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <section id="driver">
-    <h2>Trình Điều Khiển & BIOS</h2>
-    <p>Tải xuống firmware, BIOS và driver GPU/iGPU mới nhất từ trung tâm hỗ trợ:</p>
-    <ul>
+    <h2 class="vi">Trình Điều Khiển & BIOS</h2>
+    <h2 class="en hidden">Drivers & BIOS</h2>
+    <p class="vi">Tải xuống firmware, BIOS và driver GPU/iGPU mới nhất từ trung tâm hỗ trợ:</p>
+    <p class="en hidden">Download the latest firmware, BIOS and GPU/iGPU drivers from support center:</p>
+    <ul class="vi">
       <li><a href="#">Driver VegaXE I series</a></li>
       <li><a href="#">Microcode BlackDNA Gen I</a></li>
       <li><a href="#">BIOS cập nhật lỗi Corezen I-1525K</a></li>
     </ul>
+    <ul class="en hidden">
+      <li><a href="#">VegaXE I series Driver</a></li>
+      <li><a href="#">BlackDNA Gen I Microcode</a></li>
+      <li><a href="#">BIOS update for Corezen I-1525K</a></li>
+    </ul>
   </section>
 
   <section id="support">
-    <h2>Hỗ Trợ Kỹ Thuật</h2>
-    <p>Gửi phản hồi, báo lỗi, và kiểm tra trạng thái bảo hành CPU của bạn.</p>
-    <ul>
+    <h2 class="vi">Hỗ Trợ Kỹ Thuật</h2>
+    <h2 class="en hidden">Technical Support</h2>
+    <p class="vi">Gửi phản hồi, báo lỗi, và kiểm tra trạng thái bảo hành CPU của bạn.</p>
+    <p class="en hidden">Submit feedback, report issues, and check your CPU warranty status.</p>
+    <ul class="vi">
       <li><a href="#">Form liên hệ kỹ thuật</a></li>
       <li><a href="#">Tra cứu số serial & batch chip</a></li>
+    </ul>
+    <ul class="en hidden">
+      <li><a href="#">Technical contact form</a></li>
+      <li><a href="#">Check serial & batch number</a></li>
     </ul>
   </section>
 
   <section id="warranty">
-    <h2>Chính Sách Bảo Hành</h2>
-    <p>IMD cam kết bảo hành <strong>3 năm 1 đổi 1</strong> cho các lỗi do nhà sản xuất. Trường hợp mod BIOS, OC không chính thức, hoặc phá hoại có thể bị giới hạn quyền lợi.</p>
-    <p>Các dòng CPU flagship có thể yêu cầu AIO ≥240mm để được bảo hành hiệu suất toàn phần.</p>
+    <h2 class="vi">Chính Sách Bảo Hành</h2>
+    <h2 class="en hidden">Warranty Policy</h2>
+    <p class="vi">IMD cam kết bảo hành <strong>3 năm 1 đổi 1</strong> cho các lỗi do nhà sản xuất. Trường hợp mod BIOS, OC không chính thức, hoặc phá hoại có thể bị giới hạn quyền lợi.</p>
+    <p class="vi">Các dòng CPU flagship có thể yêu cầu AIO ≥240mm để được bảo hành hiệu suất toàn phần.</p>
+    
+    <p class="en hidden">IMD guarantees <strong>3 years 1-to-1 replacement</strong> warranty for manufacturer defects. Cases of BIOS modding, unofficial overclocking, or sabotage may have limited warranty coverage.</p>
+    <p class="en hidden">Flagship CPU models may require ≥240mm AIO for full performance warranty coverage.</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 IMD – Intel Micro Devices. All rights reserved.</p>
+    <p class="vi">&copy; 2025 IMD – Intel Micro Devices. All rights reserved.</p>
+    <p class="en hidden">&copy; 2025 IMD – Intel Micro Devices. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.getElementById('langToggle').addEventListener('click', function() {
+      // Toggle all Vietnamese elements
+      document.querySelectorAll('.vi').forEach(el => {
+        el.classList.toggle('hidden');
+      });
+      
+      // Toggle all English elements
+      document.querySelectorAll('.en').forEach(el => {
+        el.classList.toggle('hidden');
+      });
+      
+      // Update button text
+      const btn = document.getElementById('langToggle');
+      if (btn.textContent === 'English') {
+        btn.textContent = 'Tiếng Việt';
+      } else {
+        btn.textContent = 'English';
+      }
+    });
+  </script>
 </body>
 </html>
