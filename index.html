@@ -134,12 +134,6 @@
     .hidden {
       display: none;
     }
-    .driver-version {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #161b22;
-      border-radius: 5px;
-    }
     .serial-check {
       margin-top: 20px;
       padding: 20px;
@@ -166,6 +160,76 @@
       padding: 10px;
       background-color: #161b22;
       border-radius: 5px;
+    }
+    /* New styles for driver section */
+    .driver-container {
+      background-color: #161b22;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .driver-form {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #58a6ff;
+    }
+    .form-group select, .form-group input {
+      width: 100%;
+      padding: 8px;
+      background-color: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 4px;
+      color: #e6edf3;
+    }
+    .download-btn {
+      background-color: #58a6ff;
+      color: #0d1117;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .download-btn:hover {
+      background-color: #79b8ff;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(88, 166, 255, 0.3);
+    }
+    .driver-notes {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #1f2937;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+    .hidden-driver {
+      display: none;
+    }
+    /* Rainbow text animation */
+    .rainbow-text {
+      background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: rainbow 8s linear infinite;
+      background-size: 400% 100%;
+    }
+    @keyframes rainbow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
     }
   </style>
 </head>
@@ -415,42 +479,95 @@
     <h2 class="vi">Trình Điều Khiển & BIOS</h2>
     <h2 class="en hidden">Drivers & BIOS</h2>
     
-    <div class="vi">
-      <p><a href="#" class="driver-link">Driver VegaXE I series</a></p>
-      <div class="driver-version" style="display:none;">
-        <p><strong>Bản driver hiện có:</strong></p>
-        <p><strong>1.000 - Bản ổn định</strong></p>
-        <p>- Hỗ trợ đầy đủ tính năng cơ bản</p>
-        <p>- Tương thích tất cả ứng dụng</p>
+    <div class="driver-container">
+      <h3 class="vi">Tải trình điều khiển đồ họa VegaXE I</h3>
+      <h3 class="en hidden">Download VegaXE I Graphics Driver</h3>
+      
+      <div class="driver-form">
+        <div class="form-group">
+          <label class="vi">Loại sản phẩm</label>
+          <label class="en hidden">Product Type</label>
+          <select>
+            <option class="vi">VegaXE I Graphics</option>
+            <option class="vi">BlackDNA Chipset</option>
+            <option class="en hidden">VegaXE I Graphics</option>
+            <option class="en hidden">BlackDNA Chipset</option>
+          </select>
+        </div>
         
-        <p><strong>1.001 - Game Ready</strong></p>
-        <p>- Tối ưu cho các tựa game mới nhất</p>
-        <p>- Cải thiện hiệu năng lên đến 15%</p>
-        <p>- Hỗ trợ ray tracing trên iGPU</p>
+        <div class="form-group">
+          <label class="vi">Dòng sản phẩm</label>
+          <label class="en hidden">Product Series</label>
+          <select>
+            <option class="vi">VegaXE I (Corezen I Series)</option>
+            <option class="vi">VegaXE II (Corezen II Series)</option>
+            <option class="en hidden">VegaXE I (Corezen I Series)</option>
+            <option class="en hidden">VegaXE II (Corezen II Series)</option>
+          </select>
+        </div>
         
-        <p><strong>Hệ điều hành hỗ trợ:</strong></p>
-        <p>- Windows 10/11 64-bit</p>
-        <p>- Linux Kernel 5.15+</p>
+        <div class="form-group">
+          <label class="vi">Hệ điều hành</label>
+          <label class="en hidden">Operating System</label>
+          <select id="os-select">
+            <option class="vi">Windows 10 64-bit</option>
+            <option class="vi">Windows 11 64-bit</option>
+            <option class="vi">Linux (Ubuntu)</option>
+            <option class="vi">Linux (Fedora)</option>
+            <option class="en hidden">Windows 10 64-bit</option>
+            <option class="en hidden">Windows 11 64-bit</option>
+            <option class="en hidden">Linux (Ubuntu)</option>
+            <option class="en hidden">Linux (Fedora)</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="vi">Phiên bản driver</label>
+          <label class="en hidden">Driver Version</label>
+          <select id="driver-version">
+            <option class="vi">Bản mới nhất (1.001)</option>
+            <option class="vi">Bản ổn định (1.000)</option>
+            <option class="vi">Bản thử nghiệm (1.002 Beta)</option>
+            <option class="en hidden">Latest (1.001)</option>
+            <option class="en hidden">Stable (1.000)</option>
+            <option class="en hidden">Beta (1.002 Beta)</option>
+          </select>
+        </div>
+      </div>
+      
+      <button class="download-btn" id="download-driver">
+        <span class="vi">TẢI NGAY</span>
+        <span class="en hidden">DOWNLOAD NOW</span>
+      </button>
+      
+      <div class="driver-notes vi">
+        <p><strong>Thông tin phiên bản 1.001:</strong></p>
+        <ul>
+          <li>Tối ưu cho các tựa game mới nhất</li>
+          <li>Cải thiện hiệu năng lên đến 15%</li>
+          <li>Hỗ trợ ray tracing trên iGPU</li>
+          <li>Khắc phục lỗi màn hình nhấp nháy trên Windows 11</li>
+        </ul>
+      </div>
+      
+      <div class="driver-notes en hidden">
+        <p><strong>Version 1.001 notes:</strong></p>
+        <ul>
+          <li>Optimized for latest games</li>
+          <li>Up to 15% performance improvement</li>
+          <li>Ray tracing support on iGPU</li>
+          <li>Fixed screen flickering on Windows 11</li>
+        </ul>
       </div>
     </div>
     
-    <div class="en hidden">
-      <p><a href="#" class="driver-link">VegaXE I series Driver</a></p>
-      <div class="driver-version" style="display:none;">
-        <p><strong>Available versions:</strong></p>
-        <p><strong>1.000 - Stable</strong></p>
-        <p>- Full basic feature support</p>
-        <p>- Compatible with all applications</p>
-        
-        <p><strong>1.001 - Game Ready</strong></p>
-        <p>- Optimized for latest games</p>
-        <p>- Up to 15% performance improvement</p>
-        <p>- Ray tracing support on iGPU</p>
-        
-        <p><strong>Supported OS:</strong></p>
-        <p>- Windows 10/11 64-bit</p>
-        <p>- Linux Kernel 5.15+</p>
-      </div>
+    <!-- Hidden troll content -->
+    <div id="troll-content" class="hidden-driver" style="text-align: center; padding: 50px 0;">
+      <h2 class="rainbow-text vi">ĐÃ BẠN BẬT CAPSLOCK CHƯA?</h2>
+      <h2 class="rainbow-text en hidden">DID YOU TURN ON CAPSLOCK?</h2>
+      <img src="https://c.tenor.com/_N6UJx3X_ZsAAAAC/tenor.gif" alt="Troll face" style="max-width: 300px; margin: 20px auto;">
+      <p class="vi" style="font-size: 1.2rem;">Bạn đã bị troll! Nhưng đừng lo, bấm vào <a href="#" id="real-download" style="color: #58a6ff;">đây</a> để tải driver thật.</p>
+      <p class="en hidden" style="font-size: 1.2rem;">You've been trolled! But don't worry, click <a href="#" id="real-download-en" style="color: #58a6ff;">here</a> for the real driver.</p>
     </div>
     
     <ul class="vi">
@@ -561,15 +678,6 @@
       btn.textContent = btn.textContent === 'English' ? 'Tiếng Việt' : 'English';
     });
 
-    // Driver version toggle
-    document.querySelectorAll('.driver-link').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const versionDiv = this.parentElement.nextElementSibling;
-        versionDiv.style.display = versionDiv.style.display === 'none' ? 'block' : 'none';
-      });
-    });
-
     // Serial check toggle
     document.querySelectorAll('.serial-link').forEach(link => {
       link.addEventListener('click', function(e) {
@@ -585,6 +693,31 @@
         const resultBox = this.parentElement.querySelector('#resultBox, #resultBoxEn');
         resultBox.style.display = 'block';
       });
+    });
+
+    // Driver download troll
+    document.getElementById('download-driver').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector('.driver-container').style.display = 'none';
+      document.getElementById('troll-content').style.display = 'block';
+      
+      // Scroll to troll content
+      document.getElementById('troll-content').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    // Real download links
+    document.getElementById('real-download').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Tính năng này chưa khả dụng. Driver sẽ được tự động tải xuống khi có bản cập nhật mới nhất!');
+      document.querySelector('.driver-container').style.display = 'block';
+      document.getElementById('troll-content').style.display = 'none';
+    });
+    
+    document.getElementById('real-download-en').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('This feature is not available yet. Driver will be automatically downloaded when new updates are available!');
+      document.querySelector('.driver-container').style.display = 'block';
+      document.getElementById('troll-content').style.display = 'none';
     });
   </script>
 </body>
